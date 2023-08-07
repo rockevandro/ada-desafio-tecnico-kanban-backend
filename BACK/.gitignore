@@ -398,4 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 # local development environment
-**/appsettings.LocalDevelopment.json
+**/appsettings.LocalTest.json
