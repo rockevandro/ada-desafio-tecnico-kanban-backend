@@ -16,7 +16,9 @@ Projeto resultado do desafio técnico backend, uma API que fará a persistência
 
 O backend possui migration de banco de dados porém já é aplicada na inicialização da aplicação. Está disponibilizado na pasta BACK.
 
-Para rodá-lo, faça:
+Certifique-se de atualizar o arquivo `appsettings.LocalDevelopment.json` com os valores para `Login`, `Senha` e `Key` de acordo com os requisitos.
+
+Para rodar o Backend, faça:
 
 ```console
 > cd BACK
