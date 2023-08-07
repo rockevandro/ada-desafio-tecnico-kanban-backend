@@ -1,0 +1,39 @@
+version: '3.4'
+
+networks:
+  dev:
+    driver: bridge 
+
+services:
+  ada_kanban_api:
+    image: ${REGISTRY:-ada}/ada-kanban.api:${PLATFORM:-linux}-${TAG:-latest}
+    depends_on:
+      - "ada_kanban_db"
+    container_name: ada-kanban-api
+    ports:
+      - "5000:80"
+    build:
+      context: .
+      dockerfile: Ada.Kanban.Api/Dockerfile
+    environment:
+      - ConnectionStrings__AdaKanbanDatabase=User ID=postgres;Password=postgres;Host=ada_kanban_db;Port=5432;Database=AdaKanbanDatabase
+      - ASPNETCORE_ENVIRONMENT=LocalDevelopment
+    networks:
+      - dev
+
+  ada_kanban_db:
+    image: postgres:latest
+    container_name: ada_kanban_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data/ 
+    networks:
+      - dev
+
+volumes:
+  db_data:
