@@ -14,9 +14,9 @@ Projeto resultado do desafio técnico backend, uma API que fará a persistência
 
 ## Rodando o Backend
 
-O back possui migration de banco de dados porém já é aplicada na inicialização da aplicação.
+O backend possui migration de banco de dados porém já é aplicada na inicialização da aplicação. Está disponibilizado na pasta BACK.
 
-para rodá-lo, faça:
+Para rodá-lo, faça:
 
 ```console
 > cd BACK
